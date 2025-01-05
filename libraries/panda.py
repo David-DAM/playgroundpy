@@ -23,7 +23,9 @@ def simple_data():
 def employee_data():
     df = pd.read_csv("../resources/employee_data.csv")
 
-    print(df.head())
+    higher_than_salary = df.query("salary > 10.000")[["first_name", "last_name", "salary", "location"]]
+    max_salary = df.loc[df["salary"].idxmax()]
+    print(max_salary)
 
 
 if __name__ == "__main__":

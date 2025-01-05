@@ -1,4 +1,4 @@
-Employee_ID,First_Name,Last_Name,Age,Department,Salary,Hire_Date,Location,Email,Phone_Number
+id,first_name,last_name,age,department,salary,hire_date,location,email,phone_number
 1877,Chris,Davis,46,HR,40657,2014-12-29,New York,example2@email.com,+1-555-0303
 6281,Sarah,Wilson,22,HR,109901,2010-12-05,Phoenix,example1@email.com,+1-555-0101
 7564,Chris,Davis,23,Sales,98893,2020-03-10,Chicago,example2@email.com,+1-555-0202
