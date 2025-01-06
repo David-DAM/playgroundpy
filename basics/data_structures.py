@@ -87,5 +87,26 @@ def queues():
     print(f"First Data  {my_queue.get()}")
 
 
+def manipulate_list():
+    names = ["david", "alberto", "john"]
+
+    mapped = [name.upper() for name in names]
+
+    filtered = [name for name in mapped if name.startswith("D")]
+
+    print(filtered)
+
+
+def manipulate_list2():
+    names = ["david", "alberto", "john"]
+
+    mapped = list(map(lambda name: name.upper(), names))
+
+    filtered = list(filter(lambda name: name.startswith("D"), mapped))
+
+    print(filtered)
+
+
 if __name__ == '__main__':
-    lists()
+    # lists()
+    manipulate_list()
