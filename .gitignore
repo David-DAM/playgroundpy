@@ -1,0 +1,70 @@
+/resources/*
+!/resources/employee_data.csv
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+*.env
+
+# Cache and logs
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.sqlite3
+*.db
+
+# Package files
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Unit test / coverage reports
+.coverage
+*.cover
+*.py,cover
+.cache
+nosetests.xml
+coverage.xml
+*.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PyCharm
+.idea/
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Other
+*.bak
+*.swp
+
+# Secret environment files
+.env
+
+# Dependency directories
+node_modules/
