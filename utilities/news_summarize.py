@@ -22,25 +22,7 @@ def fetch_latest_news(article_position):
 
     article = div_recent_list.find_all("article")[article_position]
 
-    if not article:
-        raise Exception("No se encontró ningúna articulo")
-
-    div_content = article.find("div", "abstract-content")
-
-    if not div_content:
-        raise Exception("No se encontró ningúna seccion div content")
-
-    header = div_content.find("header")
-
-    if not header:
-        raise Exception("No se encontró ningúna seccion header")
-
-    news_header = header.find("h2", "abstract-title")
-
-    if not news_header:
-        raise Exception("No se encontró ningúna seccion de recientes con la clase 'section-recent-list'.")
-
-    first_news = news_header.find("a", href=True)
+    first_news = article.find("a", href=True)
 
     if not first_news:
         raise Exception("No se encontró ningún enlace dentro del h2.")
@@ -109,7 +91,10 @@ def main():
             if content:
                 summary = summarize_article(content)
                 print("\n=== Resumen ===\n")
-                print(summary)
+                lines = summary.split(". ")
+                for line in lines:
+                    print(f"- {line.strip()}.")
+                print("\n" + "=" * 20 + "\n")
             else:
                 print("No se pudo obtener contenido para esta noticia.")
 
