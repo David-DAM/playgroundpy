@@ -16,7 +16,7 @@ def fetch_latest_news(article_position):
     if response.status_code != 200:
         raise Exception(f"Error fetching the URL. Code: {response.status_code}")
 
-    page = BeautifulSoup(response.text, 'html.parser')
+    page = BeautifulSoup(response.text, 'html.parser', from_encoding='utf-8')
 
     div_recent_list = page.find("div", class_="section-recent-list")
 
@@ -46,7 +46,7 @@ def fetch_article(url):
     if response.status_code != 200:
         raise Exception(f"Error fetching the article. Code: {response.status_code}")
 
-    page = BeautifulSoup(response.text, 'html.parser')
+    page = BeautifulSoup(response.text, 'html.parser', from_encoding='utf-8')
 
     article_body = page.find("div", {"class": "article-content"})
 
@@ -94,7 +94,7 @@ def send_email_with_summaries(message_body):
 
     subject = f"News summary: {formatdate(localtime=True)}"
 
-    message = f"Subject: {subject}\n\n{message_body}"
+    message = f"Subject: {subject}\n\n{message_body}".encode('utf-8')
 
     with smtplib.SMTP("smtp.gmail.com", 587) as server:
         server.starttls()
