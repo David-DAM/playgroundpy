@@ -26,3 +26,7 @@ jobs:
       - name: Run Python script
         run: |
           python utilities/news_summarize.py
+        env:
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
