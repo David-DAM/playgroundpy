@@ -1,5 +1,7 @@
 /resources/*
 !/resources/employee_data.csv
+/utilities/*.srt
+/utilities/*.mp3
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
