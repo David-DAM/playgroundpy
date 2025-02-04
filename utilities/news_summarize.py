@@ -16,7 +16,7 @@ def fetch_latest_news(article_position):
     if response.status_code != 200:
         raise Exception(f"Error fetching the URL. Code: {response.status_code}")
 
-    page = BeautifulSoup(response.text, 'html.parser', from_encoding='utf-8')
+    page = BeautifulSoup(response.text, "html.parser", from_encoding="utf-8")
 
     div_recent_list = page.find("div", class_="section-recent-list")
 
@@ -32,7 +32,7 @@ def fetch_latest_news(article_position):
 
     news_title = first_news.get_text(strip=True)
 
-    news_link = first_news['href']
+    news_link = first_news["href"]
 
     if not news_link.startswith("http"):
         news_link = "https://www.genbeta.com" + news_link
@@ -46,14 +46,14 @@ def fetch_article(url):
     if response.status_code != 200:
         raise Exception(f"Error fetching the article. Code: {response.status_code}")
 
-    page = BeautifulSoup(response.text, 'html.parser', from_encoding='utf-8')
+    page = BeautifulSoup(response.text, "html.parser", from_encoding="utf-8")
 
     article_body = page.find("div", {"class": "article-content"})
 
     if not article_body:
         raise Exception("Is not possible to find content for this artícle.")
 
-    paragraphs = article_body.find_all('p')
+    paragraphs = article_body.find_all("p")
 
     content = " ".join([p.get_text(strip=True) for p in paragraphs])
 
@@ -61,11 +61,11 @@ def fetch_article(url):
 
 
 def summarize_article(text, sentences_count=3):
-    sentences = re.split(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s', text)
+    sentences = re.split(r"(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s", text)
 
     sentences = [sentence for sentence in sentences if len(sentence.split()) > 5]
 
-    words = re.findall(r'\w+', text.lower())
+    words = re.findall(r"\w+", text.lower())
     word_frequencies = Counter(words)
 
     sentence_scores = {
@@ -94,7 +94,7 @@ def send_email_with_summaries(message_body):
 
     subject = f"News summary: {formatdate(localtime=True)}"
 
-    message = f"Subject: {subject}\n\n{message_body}".encode('utf-8')
+    message = f"Subject: {subject}\n\n{message_body}".encode("utf-8")
 
     with smtplib.SMTP("smtp.gmail.com", 587) as server:
         server.starttls()

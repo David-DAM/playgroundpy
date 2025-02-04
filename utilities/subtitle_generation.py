@@ -37,4 +37,5 @@ def generate_subtitles(video_path):
 
 if __name__ == "__main__":
     # cuda_works()
-    generate_subtitles(r"your_file_path")
+    generate_subtitles(
+        r"C:\Users\david\Videos\Social media\Tecnologías\ELK\Crea mapas en Kibana\SHORT - Como crear mapas en Kibana.mp4")
