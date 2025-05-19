@@ -70,3 +70,4 @@ Desktop.ini
 
 # Dependency directories
 node_modules/
+/utilities/output_hls/

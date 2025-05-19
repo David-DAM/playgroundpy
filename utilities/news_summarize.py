@@ -131,7 +131,7 @@ def main():
             else:
                 print("Is not possible to retrieve content for this new.")
 
-        send_email_with_summaries(summaries)
+        # send_email_with_summaries(summaries)
         print("Success!")
     except Exception as e:
         print(f"Error: {e}")
