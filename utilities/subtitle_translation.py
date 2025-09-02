@@ -38,4 +38,4 @@ def generate_subtitles(video_path):
 if __name__ == "__main__":
     # cuda_works()
     generate_subtitles(
-        r"C:\Users\david\Videos\Social media\Tecnologías\ELK\Crea mapas en Kibana\SHORT - Como crear mapas en Kibana.mp4")
+        r"C:\Users\david\Videos\Social media\Cursos\Spring Security\Introduccion\Introducción Curso Spring Security Cero a Experto.mp4")
