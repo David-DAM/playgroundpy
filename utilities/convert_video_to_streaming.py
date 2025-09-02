@@ -61,6 +61,6 @@ def convert_to_hls_multires(input_file, output_dir):
 
 if __name__ == "__main__":
     convert_to_hls_multires(
-        r"C:\Users\david\Videos\Social media\Cursos\Java Moderno de Cero a Experto\Introduccion\Introducción Curso Java Moderno de Cero a Experto.mp4",
-        r"C:\Users\david\Videos\Social media\Cursos\Java Moderno de Cero a Experto\Introduccion"
+        r"",
+        r""
     )
